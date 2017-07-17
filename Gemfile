@@ -60,3 +60,5 @@ gem 'activerecord-import'
 gem 'dotenv-rails'
 gem 'memory_profiler'
 gem 'rack-mini-profiler'
+gem 'peek-rblineprof'
+gem 'pygments.rb', :require => false

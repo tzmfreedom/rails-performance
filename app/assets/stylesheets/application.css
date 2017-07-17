@@ -12,4 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require peek
+ *= require peek/views/rblineprof
+ *= require peek/views/rblineprof/pygments
  */
