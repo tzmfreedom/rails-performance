@@ -7,12 +7,9 @@ This rails application tell you the way to improve performance on your rails app
 ```
 $ git clone git@github.com:tzmfreedom/rails-performance.git
 $ cd rails-performance
+$ bundle install --path vendor/bundle
+$ bin/rake db:setup
 $ vim .env # You need to set MYSQL_USERNAME, MYSQL_PASSWORD, MYSQL_HOSTNAME variables.
-```
-
-Import data by seed task
-```
-$ bin/rake db:seed
 ```
 
 Run benchmark task
@@ -51,3 +48,13 @@ cache: full_join/all                  0.000000   0.000000   0.000000 (  0.000123
 * The `selet_all` and `find_by_sql` methods may help you to improve performance, but these method is difficult for you to use than simple active record usage.
 * As you know, the fastest way of fetch records from database is caching.
 
+
+## Profiling
+
+```
+$ ENABLE_STACKPROF=1 bin/rails s -b 0.0.0.0
+```
+
+```
+$ stackprof-webnav -f tmp/stackprof/stackprof-xxxx.dump
+```
