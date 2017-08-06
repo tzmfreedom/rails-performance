@@ -62,3 +62,4 @@ gem 'memory_profiler'
 gem 'rack-mini-profiler'
 gem 'peek-rblineprof'
 gem 'pygments.rb', :require => false
+gem 'benchmark-ips'

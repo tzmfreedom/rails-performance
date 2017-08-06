@@ -28,18 +28,27 @@ $ bin/rake benchmark:active_record
 
 The result is as follows.
 ```
-                                          user     system      total        real
-eager_load: one join/all              0.940000   0.040000   0.980000 (  1.041810)
-eager_load: one join/conditional      0.130000   0.000000   0.130000 (  0.143286)
-eager_load: full join/all             5.570000   0.170000   5.740000 (  6.653135)
-eager_load: full join/conditional     4.210000   0.110000   4.320000 (  4.816287)
-preload: one join/all                 0.710000   0.020000   0.730000 (  0.838022)
-preload: one join/conditional         0.040000   0.000000   0.040000 (  0.050240)
-preload: full join/all                3.760000   0.090000   3.850000 (  4.351897)
-preload: full join/conditional        1.600000   0.040000   1.640000 (  2.059543)
-select_all: full_join/all             0.740000   0.030000   0.770000 (  1.007104)
-find_by_sql: full_join/all            1.570000   0.060000   1.630000 (  1.873213)
-cache: full_join/all                  0.000000   0.000000   0.000000 (  0.000123)
+eager_load: one join/all
+                          1.345  (± 0.0%) i/s -     47.000  in  35.499157s
+eager_load: one join/conditional
+                         10.872  (± 9.2%) i/s -    378.000  in  35.046556s
+eager_load: full join/all
+                          0.218  (± 0.0%) i/s -      8.000  in  36.837148s
+eager_load: full join/conditional
+                          0.400  (± 0.0%) i/s -     14.000  in  35.185927s
+preload: one join/all
+                          1.660  (± 0.0%) i/s -     58.000  in  35.373139s
+preload: one join/conditional
+                         26.632  (±11.3%) i/s -    896.000  in  35.004991s
+preload: full join/all
+                          0.294  (± 0.0%) i/s -     11.000  in  37.782031s
+preload: full join/conditional
+                          0.759  (± 0.0%) i/s -     27.000  in  35.798513s
+select_all: full_join/all
+                          1.130  (± 0.0%) i/s -     40.000  in  35.597281s
+find_by_sql: full_join/all
+                          0.917  (± 0.0%) i/s -     32.000  in  35.223277s
+cache: full_join/all    124.408k (±15.0%) i/s -      4.042M in  35.001589s
 ```
 
 * The more you use `JOIN`, the worse active record performance is.

@@ -5,7 +5,7 @@ namespace :benchmark do
   task active_record: :environment do
     Rails.cache.fetch("records") { ContentType.eager_load(contents: {comments: :author}).to_a }
 
-    Benchmark.bm 35 do |r|
+    Benchmark.ips 35 do |r|
       r.report "eager_load: one join/all" do
         ContentType.eager_load(:contents).to_a
       end
